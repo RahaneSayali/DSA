@@ -1,3 +1,4 @@
+// Time Complexity=o(N)
 #include <iostream>
 using namespace std;
 bool search(int arr[], int size, int key)
