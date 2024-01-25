@@ -1,3 +1,5 @@
+//LIFO=last in first out
+//tc=O(1)
 void explainStack()
 {
     stack<int> st;
@@ -13,7 +15,7 @@ void explainStack()
 
     cout << st.top();  // 3
     cout << st.size(); // 4
-    cout << st.empty();
+    cout << st.empty(); //false
 
     stack<int> st1, st2;
     st1.swap(st2);
