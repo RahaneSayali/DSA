@@ -1,3 +1,5 @@
+// fifo=first in frist out
+//tc=o(1)
 void explainQueue()
 {
     Queue<int> q;
