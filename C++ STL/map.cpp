@@ -54,10 +54,7 @@ bool comp(pair<int,int>p1,pair<int,int>p2){
     return false;
 }
 
-void explainExtra(){
-    sort(a+2,a+4);
-    sort(a,a+n,greater<int>);
-}
+
 
 
 
