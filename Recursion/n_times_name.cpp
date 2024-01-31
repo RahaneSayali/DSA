@@ -12,3 +12,6 @@ int main(){
     func(1,n);
     return 0;
 }
+
+//tc O(n) function is called n times 
+//sc O(n)  
