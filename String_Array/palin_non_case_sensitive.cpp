@@ -1,14 +1,23 @@
-//case sensitive
+//NON case sensitive
 
 #include<iostream>
 using namespace std;
 
+char lowerCase(char ch){
+    if(ch>='a'&& ch<='z')
+    return ch;
+    else{
+        char temp=ch-'A'+'a';
+        return temp;
+    }
+}
 bool checkPalindrome(char a[], int n){
     int s=0;
     int e=n-1;
 
     while(s<=e){
-        if(a[s]!=a[e]){ return 0;}
+        if(lowerCase( a[s]) != lowerCase (a[e]))
+        { return 0;}
         else {s++;e--;}
         
     }
