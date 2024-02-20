@@ -27,3 +27,31 @@ vector<int> wavePrint(vector<vector<int>> arr, int nRows, int mCols)
     }
     return ans;
 }
+
+/*Time complexity
+n*m i.e n represents no. cols and m represents no. rows
+O(n)
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
