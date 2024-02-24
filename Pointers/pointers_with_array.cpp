@@ -15,7 +15,7 @@ int main(){
 
     int i=3;
     cout<<i[arr]<<endl;
-*/
+
 int temp[10]={1,2};
 cout<<sizeof(temp)<<endl;
 cout<<"1st "<<sizeof(*temp)<<endl;
@@ -26,6 +26,31 @@ cout<<sizeof(ptr)<<endl;
 cout<<sizeof(*ptr)<<endl;
 cout<<sizeof(&ptr)<<endl;
 
+
+//note that the values are 4bytes as its 32bit system 
+    cout << "Size of int: " << sizeof(int) << " bytes" << endl;
+    cout << "Size of *temp: " << sizeof(*temp) << " bytes" << endl;
+    cout << "Size of &temp: " << sizeof(&temp) << " bytes" << endl;
+
+   int a[20] = {1,2,3,5};
+   cout << " ->" << &a[0] << endl;
+   cout << &a << endl;
+   cout << a << endl;
+
+   int *p = &a[0];
+   cout << p << endl;
+   cout << *p << endl;
+   cout << "-> " << &p << endl;
+*/
+    int arr[10];
+    
+//ERROR
+    //arr = arr+1;
+
+    int *ptr = &arr[0];
+    cout << ptr << endl;
+    ptr = ptr + 1;
+    cout << ptr << endl;
     return 0;
 }
 /*
