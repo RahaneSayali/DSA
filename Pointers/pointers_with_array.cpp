@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[10]={2,5,6};
-
-    cout<<"address of first memory block is "<<arr<<endl;
+   // int arr[10]={2,5,6};
+      int arr[20]={23,122,41,67};
+   /* cout<<"address of first memory block is "<<arr<<endl;
     cout<<arr[0]<<endl;
     cout<<"address of first memory block is "<<&arr[0]<<endl;
     cout<<"4th  "<<*arr<<endl;
@@ -15,6 +15,17 @@ int main(){
 
     int i=3;
     cout<<i[arr]<<endl;
+*/
+int temp[10]={1,2};
+cout<<sizeof(temp)<<endl;
+cout<<"1st "<<sizeof(*temp)<<endl;
+cout<<"2nd "<<sizeof(&temp)<<endl;
+
+int *ptr=&temp[0];
+cout<<sizeof(ptr)<<endl;
+cout<<sizeof(*ptr)<<endl;
+cout<<sizeof(&ptr)<<endl;
+
     return 0;
 }
 /*
