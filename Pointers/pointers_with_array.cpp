@@ -45,7 +45,7 @@ cout<<sizeof(&ptr)<<endl;
     int arr[10];
     
 //ERROR
-    //arr = arr+1;
+    //arr = arr+1;  //we cant reassign address
 
     int *ptr = &arr[0];
     cout << ptr << endl;
