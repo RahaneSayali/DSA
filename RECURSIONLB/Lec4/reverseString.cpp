@@ -1,8 +1,10 @@
 #include<iostream>
 using namespace std;
 
-void reverse(string& str,int i,int j){
-    //base case
+void reverse(string& str,int i,int j){   //& pass by reference
+cout<<"call received for "<<str<<endl;
+
+    //base case 
     if(i>j)
     return;
 
