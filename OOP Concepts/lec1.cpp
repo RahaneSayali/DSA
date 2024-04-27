@@ -12,12 +12,36 @@ public:
     {
         cout << level << endl;
     }
-    
-    
+
+    int gethealth()
+    {
+        return health;
+    }
+
+    char getlevel()
+    {
+        return level;
+    }
+
+    void sethealth(int h)
+    {
+        health = h;
+    }
+
+    void setlevel(char ch)
+    {
+        level = ch;
+    }
 };
-int main(){
-    //creation of object
+int main()
+{
+    // creation of object
     Hero sayali;
-    sayali.health=100; //not accessible as its on private 
-    sayali.level='A';
+    cout << "sayali health " << sayali.gethealth() << endl; // will give garbage value
+    // sayali.health = 100; // not accessible as its on private
+    sayali.sethealth(70);
+    sayali.level = 'A';
+
+    cout << "health is " << sayali.gethealth() << endl;
+    cout << "level is " << sayali.level << endl;
 }
