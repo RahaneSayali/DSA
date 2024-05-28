@@ -62,10 +62,48 @@ public:
     {
         strcpy(this->name, name);
     }
+    //Destructor
+    ~Hero(){
+        cout<<"Destructor called"<<endl;
+    }
+
+
 };
 int main()
-{
-    Hero hero1;
+{   
+
+    //static
+    Hero a;
+
+    //dynamic
+    Hero *b = new Hero;
+    delete b;
+    
+    return 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Hero hero1;
     hero1.sethealth(12);
     hero1.setlevel('D');
     char name[7] = "sayali";
