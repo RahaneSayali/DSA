@@ -13,11 +13,26 @@ public:
         this->next = NULL; // set nxt node as null
     }
 };
-void insertAtTail(Node *&tail, int d)
+void insertAtHead(Node *&head, int d)
 {
     Node *temp = new Node(d);
-    tail->next = temp;
-    tail = tail->next;
+    temp->next = head;
+    head = temp;
+}
+
+void insertAtPosition(Node *&head, int position, int d)
+{
+    Node *temp = head;
+    int cnt = 1;
+    while (cnt < position - 1)
+    {
+        temp = temp->next;
+        cnt++;
+    }
+    // creating node for d
+    Node *nodeToinsert = new Node(d);
+    nodeToinsert->next = temp->next;
+    temp->next = nodeToinsert;
 }
 void print(Node *&head)
 {
@@ -32,18 +47,22 @@ void print(Node *&head)
 }
 int main()
 {
-    Node *node1 = new Node(10);  // new node with value 10
+    Node *node1 = new Node(10); // new node with value 10
 
-    //head pointed to node1
+    // head pointed to node1
     Node *head = node1;
     Node *tail = node1;
     print(head);
 
-    
-    insertAtTail(tail,12);
+    insertAtHead(head, 12);
+    print(head);
+    insertAtHead(head, 15);
     print(head);
 
-    insertAtTail(tail,15);
+    insertAtPosition(head, 3, 22);
     print(head);
+
+    // insertAtPosition(tail,15);
+    // print(head);
     return 0;
 }
