@@ -33,13 +33,15 @@ void print(Node *&head)
 int main()
 {
     Node *node1 = new Node(10);  // new node with value 10
-    cout << node1->data << endl; // print valuei.e 10
-    cout << node1->next << endl; // print next node i.e null
+   // cout << node1->data << endl; // print valuei.e 10
+    // cout << node1->next << endl; // print next node i.e null
 
     //head pointed to node1
     Node *head = node1;
     print(head);
     insertAtHead(head,12);
+    print(head);
+    insertAtHead(head,15);
     print(head);
     return 0;
 }
