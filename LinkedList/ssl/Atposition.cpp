@@ -12,6 +12,19 @@ public:
         this->data = data; // set value of node
         this->next = NULL; // set nxt node as null
     }
+
+    // destructor
+    ~Node()
+    {
+        int value = this->data;
+        // memory freee
+        if (this->next != NULL)
+        {
+            delete next;
+            this->next = NULL;
+        }
+        cout << "memory is free for node with data " << value << endl;
+    }
 };
 void insertAtHead(Node *&head, int d)
 {
@@ -20,18 +33,20 @@ void insertAtHead(Node *&head, int d)
     head = temp;
 }
 
-void insertAtTail(Node* &tail, int d) {
-     // new node create
-    Node* temp = new Node(d);
-    tail -> next = temp;
-    tail  = temp;
+void insertAtTail(Node *&tail, int d)
+{
+    // new node create
+    Node *temp = new Node(d);
+    tail->next = temp;
+    tail = temp;
 }
 
-void insertAtPosition(Node *&tail,Node *&head, int position, int d)
-{   
-    
-    //insert at Start
-    if(position == 1) {
+void insertAtPosition(Node *&tail, Node *&head, int position, int d)
+{
+
+    // insert at Start
+    if (position == 1)
+    {
         insertAtHead(head, d);
         return;
     }
@@ -44,10 +59,11 @@ void insertAtPosition(Node *&tail,Node *&head, int position, int d)
         cnt++;
     }
 
-     //inserting at Last Position
-    if(temp -> next == NULL) {
-        insertAtTail(tail,d);
-        return ;
+    // inserting at Last Position
+    if (temp->next == NULL)
+    {
+        insertAtTail(tail, d);
+        return;
     }
 
     // creating node for d
@@ -66,6 +82,35 @@ void print(Node *&head)
     }
     cout << endl;
 }
+
+void deleteNode(int position, Node *&head)
+{
+    // deleting 1st node or start node
+    if (position == 1)
+    {
+        Node *temp = head;
+        head = head->next;
+        // memory release
+        temp->next = NULL;
+        delete temp;
+    }
+    else
+    {
+        // deleting any middle node or last node
+        Node *curr = head;
+        Node *prev = NULL;
+        int cnt = 0;
+        while (cnt < position)
+        {
+            prev = curr;
+            curr = curr->next;
+            cnt++;
+        }
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+}
 int main()
 {
     Node *node1 = new Node(10); // new node with value 10
@@ -80,10 +125,12 @@ int main()
     insertAtHead(head, 15);
     print(head);
 
-    insertAtPosition(tail,head, 3, 22);
+    insertAtPosition(tail, head, 3, 22);
     print(head);
 
     // insertAtPosition(tail,15);
     // print(head);
+    deleteNode(2, head);
+    print(head);
     return 0;
 }
